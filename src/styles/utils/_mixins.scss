@@ -17,10 +17,18 @@
 }
 
 @mixin placeholder {
-  ::placeholder { @content; }
-  ::-webkit-input-placeholder { @content; }
-  ::-moz-placeholder { @content; }
-  :-ms-input-placeholder { @content; }
+  ::placeholder {
+    @content;
+  }
+  ::-webkit-input-placeholder {
+    @content;
+  }
+  ::-moz-placeholder {
+    @content;
+  }
+  :-ms-input-placeholder {
+    @content;
+  }
 }
 
 @mixin flex-variant($display, $direction: false, $align: false, $justify: false, $wrap: false) {
@@ -48,11 +56,23 @@
 }
 
 @mixin flex($direction: false, $align: false, $justify: false, $wrap: false) {
-  @include flex-variant(flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+  @include flex-variant(
+    flex,
+    $direction: $direction,
+    $align: $align,
+    $justify: $justify,
+    $wrap: $wrap
+  );
 }
 
 @mixin inline-flex($direction: false, $align: false, $justify: false, $wrap: false) {
-  @include flex-variant(inline-flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+  @include flex-variant(
+    inline-flex,
+    $direction: $direction,
+    $align: $align,
+    $justify: $justify,
+    $wrap: $wrap
+  );
 }
 
 @mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
@@ -62,10 +82,10 @@
     font-weight: $weight;
     src: url($file-name + '.eot');
     src:
-            url($file-name + '.eot?#iefix') format('embedded-opentype'),
-            url($file-name + '.woff') format('woff'),
-            url($file-name + '.ttf') format('truetype'),
-            url($file-name + '.svg##{$font-name}') format('svg');
+      url($file-name + '.eot?#iefix') format('embedded-opentype'),
+      url($file-name + '.woff') format('woff'),
+      url($file-name + '.ttf') format('truetype'),
+      url($file-name + '.svg##{$font-name}') format('svg');
   }
 }
 
