@@ -1,0 +1,10 @@
+mixin picture(name, alt, width, height, lazy = true)
+  //- проста версія, у завданні 5 стане AVIF/WebP/JPEG
+  img(
+    src=`/src/assets/images/${name}.webp`,
+    alt=alt,
+    width=width,
+    height=height,
+    loading=lazy ? 'lazy' : false,
+    decoding='async'
+  )&attributes(attributes)
