@@ -1,0 +1,49 @@
+a.skip-link(href='#main') Skip to content
+
+header.header
+  .container.header__inner
+    a.logo(href='#top', aria-label='Keepsake — home')
+      span.logo__mark(aria-hidden='true') K
+      span.logo__text(aria-hidden='true') eepsake
+
+    nav.nav(aria-label='Main')
+      ul.nav__list
+        each item in navItems
+          li
+            a.nav__link(
+              class={ 'is-active': item.active },
+              href=item.href,
+              aria-current=item.active ? 'page' : false
+            ) #{ item.label }
+      a.fav-btn(href='#', aria-label='Favourites')
+        +icon('heart')
+
+    button.burger(
+      type='button',
+      popovertarget='site-menu',
+      aria-expanded='false',
+      aria-controls='site-menu',
+      aria-label='Menu'
+    )
+      +icon('burger').burger__open
+      +icon('close').burger__close
+
+  #site-menu.mobile-menu(popover)
+    nav(aria-label='Mobile')
+      ul.mobile-menu__list
+        each item in navItems
+          li
+            a.mobile-menu__link(
+              class={ 'is-active': item.active },
+              href=item.href,
+              aria-current=item.active ? 'page' : false
+            ) #{ item.label }
+    .mobile-menu__actions
+      +btn('Contact us', '#contact')
+      +btn('Favourites', '#', 'secondary')
+        +icon('heart', 16)
+    .mobile-menu__contacts
+      p.mobile-menu__label Say hello
+      a(href=`mailto:${contacts.email}`) #{ contacts.email }
+      a(href=`tel:${contacts.phone}`) #{ contacts.phoneLabel }
+      include socials
