@@ -1,0 +1,10 @@
+mixin btn(text, href, variant = 'primary')
+  - let modifier = 'btn--primary';
+  case variant
+    when 'secondary'
+      - modifier = 'btn--secondary';
+    default
+      - modifier = 'btn--primary';
+  a.btn(class=modifier, href=href)&attributes(attributes)
+    block
+    = text
