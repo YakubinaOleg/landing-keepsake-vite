@@ -1,0 +1,10 @@
+mixin work-card(work, label)
+  article.card(data-category=work.category, class=work.tier > 1 ? `card--tier-${work.tier}` : null)
+    a.card__link(href='#')
+      +picture(work.image, work.alt, 714, 564)
+      .card__overlay
+        span.card__plus(aria-hidden='true')
+          +icon('plus')
+        h3.card__title #{ work.title }
+        span.card__line(aria-hidden='true')
+        span.card__cat #{ label }
