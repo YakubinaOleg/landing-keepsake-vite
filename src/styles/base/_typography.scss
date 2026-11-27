@@ -1,18 +1,14 @@
-*,
-html,
-body {
-  font-family: 'Montserrat', sans-serif;
-}
+@use '../abstracts' as *;
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: rem(80);
 }
 
-a {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+body {
+  padding-top: var(--header-h);
+  overflow-x: hidden;
+  font: 400 var(--fs-body) / var(--lh-body) var(--font-body);
+  color: var(--color-text);
+  background: var(--color-white);
 }
