@@ -1,0 +1,41 @@
+footer#contact.footer
+  .container
+    .footer__top
+      .footer__links
+        each column in footerColumns
+          nav.footer__col(aria-labelledby=column.id)
+            h2.footer__title(id=column.id) #{ column.title }
+            ul
+              each link in column.links
+                li
+                  a(href=link.href) #{ link.label }
+
+      #newsletter.newsletter
+        h2.footer__title Newsletter
+        form.newsletter__form(action='#subscribed', method='get')
+          p.newsletter__text Fresh case studies and design notes, once a month.
+          .field
+            .field__row
+              label.visually-hidden(for='email') Your email address
+              input#email.input(
+                type='email',
+                name='email',
+                placeholder='Your email address',
+                required,
+                autocomplete='email',
+                aria-describedby='email-error'
+              )
+              button.btn.btn--primary(type='submit') Subscribe
+            p#email-error.field__error Please enter a valid email address.
+          label.check
+            input(type='checkbox', name='consent', required)
+            span I agree to the privacy policy
+        #subscribed.success(role='status', tabindex='-1')
+          span.success__icon(aria-hidden='true')
+            +icon('check')
+          p.success__title You’re in! Check your inbox to confirm.
+          p.success__note One email a month. No spam, unsubscribe anytime.
+
+    .footer__bottom
+      p.footer__copy © 2026 Keepsake. All rights reserved.
+      include socials
