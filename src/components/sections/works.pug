@@ -1,0 +1,19 @@
+section#works.section.works(aria-labelledby='works-title')
+  .container
+    each category, i in categories
+      input.visually-hidden(type='radio', name='filter', id=`f-${category.id}`, checked=i === 0)
+    input#more.visually-hidden(type='checkbox')
+
+    .works__head
+      h2#works-title.section-title Our awesome works
+      .chips
+        each category in categories
+          label.chip(for=`f-${category.id}`) #{ category.label }
+
+    .grid
+      each work in works
+        - const cat = categories.find((item) => item.id === work.category);
+        +work-card(work, cat.label)
+
+    .load-more
+      label.btn.btn--secondary(for='more') Load more works
