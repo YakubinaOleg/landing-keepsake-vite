@@ -15,6 +15,7 @@
     "max-nesting-depth": 3,
 
     "selector-max-id": 0,
+    "media-feature-range-notation": "prefix",
 
     "declaration-no-important": true
   }

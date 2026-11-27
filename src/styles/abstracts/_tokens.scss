@@ -1,0 +1,88 @@
+$breakpoints: (
+  'md': 768px,
+  'lg': 1280px,
+);
+$colors: (
+  'accent': #f95858,
+  'accent-hover': #e44646,
+  'teal': #2cd5c4,
+  'text-dark': #3a3a3c,
+  'text': #666a6e,
+  'muted': #9aa0a6,
+  'bg-light': #f0f3f4,
+  'border': #e1e5e8,
+  'footer': #2a2a2d,
+  'overlay': rgb(30 32 36 / 82%),
+  'white': #fff,
+  'logo': #b9bec3,
+  'footer-line': #3c3c40,
+  'icon-light': #c9dce8,
+  'icon-dark': #5f6b78,
+);
+$spaces: (4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 40, 48);
+$fonts: (
+  'heading': (
+    oswald,
+    'Arial Narrow',
+    arial,
+    sans-serif,
+  ),
+  'body': (
+    'Open Sans',
+    arial,
+    helvetica,
+    sans-serif,
+  ),
+  'logo': (
+    'Dancing Script',
+    cursive,
+  ),
+);
+$static: (
+  'fs-body': 14px,
+  'lh-body': 22px,
+  'container': 1100px,
+);
+$responsive: (
+  'base': (
+    'fs-h1': 26px,
+    'fs-cta': 22px,
+    'fs-ui': 12px,
+    'fs-quote': 16px,
+    'fs-stat': 38px,
+    'fs-logo': 22px,
+    'logo-mark': 34px,
+    'gutter': 20px,
+    'section-y': 56px,
+    'header-h': 64px,
+    'grid-gap': 12px,
+    'card-ratio': '1 / 0.72',
+    'service-icon': 72px,
+    'post-thumb': 96px,
+  ),
+  'md': (
+    'fs-h1': 32px,
+    'fs-cta': 24px,
+    'fs-ui': 13px,
+    'fs-quote': 19px,
+    'fs-stat': 40px,
+    'fs-logo': 26px,
+    'logo-mark': 40px,
+    'gutter': 40px,
+    'section-y': 72px,
+    'header-h': 84px,
+    'card-ratio': '1 / 0.79',
+    'service-icon': 96px,
+    'post-thumb': 150px,
+  ),
+  'lg': (
+    'fs-h1': 40px,
+    'fs-cta': 28px,
+    'fs-quote': 22px,
+    'fs-stat': 48px,
+    'gutter': 90px,
+    'section-y': 90px,
+    'header-h': 100px,
+    'grid-gap': 14px,
+  ),
+);
