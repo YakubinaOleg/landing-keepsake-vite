@@ -1,0 +1,16 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  font: 400 18px / 27px var(--font-heading);
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  &::after {
+    width: 16px;
+    height: 2px;
+    content: '';
+    background: var(--color-accent);
+  }
+}
