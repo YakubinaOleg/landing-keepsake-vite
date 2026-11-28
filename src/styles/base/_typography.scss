@@ -1,8 +1,11 @@
 @use '../abstracts' as *;
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: rem(80);
+
+  @include motion-ok {
+    scroll-behavior: smooth;
+  }
 }
 
 body {

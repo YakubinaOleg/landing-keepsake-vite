@@ -7,6 +7,18 @@
   }
 }
 
+@mixin motion-ok {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin transition($values...) {
+  @include motion-ok {
+    transition: $values;
+  }
+}
+
 @mixin visually-hidden {
   position: absolute;
   width: 1px;

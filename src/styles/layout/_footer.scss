@@ -1,0 +1,92 @@
+@use '../abstracts' as *;
+
+.footer {
+  padding-top: var(--space-48);
+  color: var(--color-muted);
+  background: var(--color-footer);
+
+  @include mq(md) {
+    padding-top: rem(64);
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-32);
+    padding-bottom: var(--space-40);
+
+    @include mq(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: var(--space-40);
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: var(--space-40);
+    order: 2;
+
+    @include mq(md) {
+      flex: none;
+      order: 0;
+      gap: rem(60);
+    }
+  }
+
+  &__col {
+    flex: 1;
+
+    @include mq(md) {
+      flex: none;
+      width: rem(160);
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--space-14);
+    font: 400 15px / 21px var(--font-heading);
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+
+  &__link {
+    @include transition(color 0.2s);
+
+    &:hover {
+      color: var(--color-white);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-16);
+    padding-block: var(--space-24) var(--space-28);
+    border-top: 1px solid var(--color-footer-line);
+
+    @include mq(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-block: var(--space-24) var(--space-32);
+    }
+  }
+
+  &__copy {
+    order: 2;
+    font-size: rem(13);
+    line-height: rem(18);
+
+    @include mq(md) {
+      order: 0;
+    }
+  }
+}
