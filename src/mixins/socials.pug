@@ -1,0 +1,6 @@
+mixin socials(items, modifier)
+  ul.socials(class=modifier ? `socials--${modifier}` : null)
+    each item in items
+      li
+        a.socials__link(href='#', aria-label=item.label)
+          +icon(item.icon)

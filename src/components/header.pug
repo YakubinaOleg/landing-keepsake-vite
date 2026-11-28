@@ -31,7 +31,7 @@ header.header
     nav(aria-label='Mobile')
       ul.mobile-menu__list
         each item in navItems
-          li
+          li.mobile-menu__item
             a.mobile-menu__link(
               class={ 'is-active': item.active },
               href=item.href,
@@ -43,6 +43,6 @@ header.header
         +icon('heart', 16)
     .mobile-menu__contacts
       p.mobile-menu__label Say hello
-      a(href=`mailto:${contacts.email}`) #{ contacts.email }
-      a(href=`tel:${contacts.phone}`) #{ contacts.phoneLabel }
-      include socials
+      a.mobile-menu__contact(href=`mailto:${contacts.email}`) #{ contacts.email }
+      a.mobile-menu__contact(href=`tel:${contacts.phone}`) #{ contacts.phoneLabel }
+      +socials(socials)
