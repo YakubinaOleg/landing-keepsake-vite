@@ -1,0 +1,99 @@
+@use '../abstracts' as *;
+
+$filters: ('all', 'branding', 'identity', 'print', 'web', 'motion');
+
+.works {
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+    margin-bottom: var(--space-20);
+
+    @include mq(md) {
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-24);
+    }
+  }
+
+  &__title {
+    @include mq(md) {
+      flex: none;
+      white-space: nowrap;
+    }
+  }
+
+  &__grid {
+    --cols: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--grid-gap);
+    align-items: flex-start;
+
+    @include mq(md) {
+      --cols: 2;
+    }
+
+    @include mq(lg) {
+      --cols: 3;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-24);
+
+    @include mq(md) {
+      margin-top: var(--space-28);
+    }
+  }
+
+  &__more-btn {
+    width: 100%;
+
+    @include mq(md) {
+      width: auto;
+    }
+  }
+}
+
+.works__toggle:checked ~ .works__grid .card--tier-2,
+.works__toggle:checked ~ .works__grid .card--tier-3 {
+  display: block;
+}
+
+.works__toggle:checked ~ .works__more,
+.works__radio:not([value='all']):checked ~ .works__more {
+  display: none;
+}
+
+.works__toggle:focus-visible ~ .works__more .works__more-btn {
+  @include focus-ring;
+}
+
+@each $filter in $filters {
+  .works__radio[value='#{$filter}']:checked ~ .works__head .chips__item[for='f-#{$filter}'] {
+    color: var(--color-white);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .works__radio[value='#{$filter}']:focus-visible ~ .works__head .chips__item[for='f-#{$filter}'] {
+    @include focus-ring;
+  }
+
+  @if $filter != 'all' {
+    .works__radio[value='#{$filter}']:checked ~ .works__grid {
+      .card:not([data-category~='#{$filter}']) {
+        display: none;
+      }
+
+      .card[data-category~='#{$filter}'] {
+        display: block;
+      }
+    }
+  }
+}

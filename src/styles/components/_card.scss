@@ -1,0 +1,91 @@
+@use '../abstracts' as *;
+
+.card {
+  position: relative;
+  display: block;
+  flex: 0 0 calc((100% - (var(--cols) - 1) * var(--grid-gap)) / var(--cols));
+  min-width: 0;
+  overflow: hidden;
+  background: var(--color-bg-light);
+  aspect-ratio: var(--card-ratio);
+
+  &--tier-2 {
+    display: none;
+
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  &--tier-3 {
+    display: none;
+
+    @include mq(lg) {
+      display: block;
+    }
+  }
+
+  &__link,
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__link {
+    position: relative;
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    text-align: center;
+    background: var(--color-overlay);
+    opacity: 0;
+
+    @include transition(opacity 0.25s);
+  }
+
+  &__link:hover &__overlay,
+  &:focus-within &__overlay {
+    opacity: 1;
+  }
+
+  &__plus {
+    @include flex-center;
+
+    width: 44px;
+    height: 44px;
+    color: var(--color-white);
+    background: var(--color-teal);
+    border-radius: 50%;
+  }
+
+  &__title {
+    font: 400 17px / 25px var(--font-heading);
+    letter-spacing: 0.5px;
+  }
+
+  &__line {
+    width: 30px;
+    height: 2px;
+    background: var(--color-accent);
+  }
+
+  &__cat {
+    font: 400 var(--fs-ui) / 18px var(--font-heading);
+    color: var(--color-teal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
