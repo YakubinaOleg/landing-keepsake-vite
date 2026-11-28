@@ -1,7 +1,7 @@
 mixin work-card(work, label)
   article.card(data-category=work.category, class=work.tier > 1 ? `card--tier-${work.tier}` : null)
     a.card__link(href='#')
-      +picture(work.image, work.alt, 714, 564)
+      +picture(work.image, work.alt, 714, 564).card__img
       .card__overlay
         span.card__plus(aria-hidden='true')
           +icon('plus')
