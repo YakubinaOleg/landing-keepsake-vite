@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+.success {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-10);
+
+  &:target {
+    display: flex;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &__icon {
+    @include flex-center;
+
+    width: 40px;
+    height: 40px;
+    color: var(--color-footer);
+    background: var(--color-teal);
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  &__note {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

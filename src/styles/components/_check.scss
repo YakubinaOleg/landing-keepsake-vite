@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.check {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+
+  &__input {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--color-accent);
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+}

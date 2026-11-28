@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.newsletter {
+  order: 1;
+
+  @include mq(md) {
+    flex: 1;
+    order: 0;
+    max-width: rem(420);
+  }
+
+  &__text {
+    margin-bottom: var(--space-14);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &:has(.success:target) &__form {
+    display: none;
+  }
+}

@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.field {
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+
+    @include mq(md) {
+      flex-direction: row;
+    }
+  }
+
+  &__error {
+    min-height: 16px;
+    margin: var(--space-6) 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-accent);
+    visibility: hidden;
+  }
+
+  &:has(.input:user-invalid) &__error {
+    visibility: visible;
+  }
+}
