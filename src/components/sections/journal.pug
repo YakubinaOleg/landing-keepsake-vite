@@ -3,16 +3,16 @@ section#journal.section.journal(aria-labelledby='journal-title')
     +section-head('From the journal', 'journal-title')
       p Notes on process, case studies and things that inspire us.
     .posts
-      each post, i in posts
-        article.post
-          .post__thumb(class=`post__thumb--${i + 1}`)
-            +picture(post.image, '', 300, 300)
-          .post__body
-            p.post__meta
+      each post in posts
+        article.posts__item
+          .posts__thumb
+            +picture(post.image, '', 300, 300).posts__img
+          .posts__body
+            p.posts__meta
               time(datetime=post.date) #{ post.dateLabel }
               = ` / ${post.category}`
-            h3.post__title #{ post.title }
+            h3.posts__title #{ post.title }
             p #{ postText }
-            a.post__more(href='#')
+            a.posts__more(href='#')
               | Read more
               span.visually-hidden= ` about ${post.title}`

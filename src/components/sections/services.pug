@@ -4,8 +4,8 @@ section#about.section(aria-labelledby='about-title')
       p We are a small team of designers and makers who help brands look their best online and offline.
     ul.services
       each service in services
-        li.service
-          span.service__icon(aria-hidden='true')
+        li.services__item
+          span.services__icon(aria-hidden='true')
             +icon(service.icon)
-          h3.service__title #{ service.title }
+          h3.services__title #{ service.title }
           p #{ service.text }

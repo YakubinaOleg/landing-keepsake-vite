@@ -4,5 +4,5 @@ section.section(aria-labelledby='clients-title')
       p Some of the teams that trusted us with their brands.
     ul.logos
       each client in clients
-        li(class=`logo-item logo-item--${client.id}`) #{ client.name }
+        li.logos__item(class=`logos__item--${client.id}`) #{ client.name }
     include ../testimonial

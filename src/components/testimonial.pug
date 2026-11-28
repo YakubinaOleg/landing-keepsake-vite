@@ -1,7 +1,7 @@
 figure.testimonial
   span.testimonial__mark(aria-hidden='true') “
   blockquote
-    p #{ testimonial.text }
+    p.testimonial__text #{ testimonial.text }
   figcaption.testimonial__author
     span.avatar(aria-hidden='true') #{ testimonial.initials }
     span.testimonial__who
@@ -9,4 +9,4 @@ figure.testimonial
       span.testimonial__role #{ testimonial.role }
     span.dots(aria-hidden='true')
       each dot, i in [0, 1, 2]
-        span.dot(class={ 'is-active': i === 0 })
+        span.dots__item(class={ 'is-active': i === 0 })
