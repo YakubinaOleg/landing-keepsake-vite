@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.avatar {
+  @include flex-center;
+
+  flex: none;
+  width: 48px;
+  height: 48px;
+  font: 400 16px / 1 var(--font-heading);
+  color: var(--color-white);
+  letter-spacing: 1px;
+  background: var(--color-text-dark);
+  border-radius: 50%;
+}

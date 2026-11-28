@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+.logos {
+  --cols: 2;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: var(--space-14);
+
+  @include mq(md) {
+    --cols: 3;
+  }
+
+  @include mq(lg) {
+    --cols: 6;
+  }
+
+  &__item {
+    @include flex-center;
+
+    flex: 0 0 calc(100% / var(--cols));
+    min-height: 72px;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--color-logo);
+
+    &--nordly {
+      font-family: var(--font-heading);
+      font-weight: 700;
+    }
+
+    &--halcyon {
+      font-family: var(--font-logo);
+      font-weight: 700;
+    }
+
+    &--arco {
+      font-family: var(--font-heading);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    &--pinewood {
+      font-family: var(--font-body);
+      font-weight: 700;
+    }
+
+    &--vela {
+      font-family: var(--font-body);
+      font-weight: 300;
+      letter-spacing: 3px;
+    }
+
+    &--ostra {
+      font-family: var(--font-heading);
+      font-weight: 400;
+    }
+  }
+}

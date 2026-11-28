@@ -1,0 +1,49 @@
+@use '../abstracts' as *;
+
+.services {
+  --cols: 2;
+  --gap-x: var(--space-16);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-32) var(--gap-x);
+  margin-top: var(--space-14);
+  text-align: center;
+
+  @include mq(md) {
+    --gap-x: var(--space-24);
+
+    row-gap: var(--space-40);
+  }
+
+  @include mq(lg) {
+    --cols: 4;
+  }
+
+  &__item {
+    display: flex;
+    flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap-x)) / var(--cols));
+    flex-direction: column;
+    gap: var(--space-14);
+    align-items: center;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  &__icon {
+    @include flex-center;
+
+    flex: none;
+    width: var(--service-icon);
+    height: var(--service-icon);
+    background: var(--color-bg-light);
+    border-radius: 50%;
+  }
+
+  &__title {
+    font: 400 17px / 22px var(--font-heading);
+    color: var(--color-text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}

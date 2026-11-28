@@ -1,0 +1,16 @@
+.dots {
+  display: flex;
+  gap: var(--space-8);
+  margin-left: auto;
+
+  &__item {
+    width: 8px;
+    height: 8px;
+    background: var(--color-border);
+    border-radius: 50%;
+
+    &.is-active {
+      background: var(--color-accent);
+    }
+  }
+}
